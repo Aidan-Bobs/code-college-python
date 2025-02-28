@@ -6,8 +6,10 @@ for car in cars:
     else:
         print(car.title())
 
+
+
 #gets an input from the user by askin them their name
-my_name=input("whats your name? ")
+my_name= input("whats your name? ")
 
 #checks if name is Aidan
 if my_name == "Aidan":
@@ -17,3 +19,4 @@ elif my_name == "David":
     print("hello, Mr. David")
 else:
     print(f"Hello, {my_name}")
+
