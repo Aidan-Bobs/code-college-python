@@ -20,3 +20,6 @@ elif my_name == "David":
 else:
     print(f"Hello, {my_name}")
 
+number = 4
+
+print("even" if number == %2, else "odd")
