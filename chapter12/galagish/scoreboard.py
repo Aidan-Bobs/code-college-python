@@ -55,5 +55,7 @@ class Scoreboard:
             self.prep_high_score()
             self.prep_level()
 
-
+    def prep_level(self):
+        """Turn the level into a rendered image."""
+        level_str = str(self.stats.level)
     
