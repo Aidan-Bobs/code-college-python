@@ -12,3 +12,4 @@ new_text = input("what do you want to write? ")
 
 with open("my_name.txt", "a") as text_file:
     text_file.write
+    
