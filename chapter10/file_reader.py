@@ -30,3 +30,5 @@ file_text += input_text
 new_path.write_text(f"{file_text}\ncoding can make you go nuts!\n")
 
 print(f"Go check the {new_path.name}")
+
+print()
