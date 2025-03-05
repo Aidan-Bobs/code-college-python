@@ -22,4 +22,3 @@ else:
 
 number = 4
 
-print("even" if number == %2, else "odd")
