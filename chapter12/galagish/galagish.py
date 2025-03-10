@@ -72,7 +72,32 @@ class AlienInvasion:
     def _check_play_button(self, mouse_pos):
         """Start a new game when the player clicks Play."""
         button_clickd = self.play_button.rect.collidepoint(mouse_pos)
+        
         if button_clickd and not self.game_active:
+          self._start_game()
+
+    def _check_keydown_events(self, event):
+        """Respond to keypresses."""
+        if event.key == pygame.K_RIGHT:
+            self.ship.moving_right = True
+        elif event.key == pygame.K_LEFT:
+            self.ship.moving_left = True
+        elif event.key == pygame.K_q:
+            sys.exit()
+        elif event.key == pygame.K_SPACE:
+            self._fire_bullet()      
+        elif event.key == pygame.K_p: 
+            if not self.game_active:
+                self._start_game()      
+
+    def _check_keyup_events(self, event):
+        """Respond to key releases."""
+        if event.key == pygame.K_RIGHT:
+            self.ship.moving_right = False
+        elif event.key == pygame.K_LEFT:
+            self.ship.moving_left = False
+
+    def _start_game(self):
             #reset game settings
             self.settings.initialize_dynamic_settings()
             #reset game stats
@@ -92,24 +117,6 @@ class AlienInvasion:
 
             #hiding the cursor
             pygame.mouse.set_visible(False)
-
-    def _check_keydown_events(self, event):
-        """Respond to keypresses."""
-        if event.key == pygame.K_RIGHT:
-            self.ship.moving_right = True
-        elif event.key == pygame.K_LEFT:
-            self.ship.moving_left = True
-        elif event.key == pygame.K_q:
-            sys.exit()
-        elif event.key == pygame.K_SPACE:
-            self._fire_bullet()            
-
-    def _check_keyup_events(self, event):
-        """Respond to key releases."""
-        if event.key == pygame.K_RIGHT:
-            self.ship.moving_right = False
-        elif event.key == pygame.K_LEFT:
-            self.ship.moving_left = False
 
     def _fire_bullet(self):
         """Create a new bullet and add it to the bullets group."""
